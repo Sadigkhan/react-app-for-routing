@@ -9,11 +9,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // pages
 import { Home }  from './pages/Home';
 import { About } from './pages/About';
+import { MainLayout } from "./layouts/MainLayout";
 
 const router  = createBrowserRouter([
-  { index: true, element: <Home/> },
-  { path: 'home', element: <Home/> },
-  { path: 'about', element: <About/> },
+  {
+    path: '/',
+    element: <MainLayout />,
+    children: [
+      { index: true, element: <Home/> },
+      { path: 'home', element: <Home/> },
+      { path: 'about', element: <About/> },
+    ]
+  }  
 ]);
 
 function App() {
