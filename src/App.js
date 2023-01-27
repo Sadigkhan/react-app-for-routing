@@ -6,6 +6,7 @@ import { About } from './pages/About';
 import { Faq } from './pages/help/Faq';
 import { Contact } from './pages/help/Contact';
 import { Users, usersLoader } from './pages/Users';
+import { UserDetails, userDetailsLoader } from './pages/UserDetails';
 
 // layouts
 import { MainLayout } from "./layouts/MainLayout";
@@ -27,7 +28,8 @@ const router  = createBrowserRouter([
           { path: 'faq', element: <Faq/>}
         ]
       },
-      {  path: 'users', element: <Users/>, loader: usersLoader }
+      {  path: 'users', element: <Users/>, loader: usersLoader },
+      {  path: 'users/:userid', element: <UserDetails />, loader: userDetailsLoader }
     ]
   }  
 ]);
