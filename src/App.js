@@ -11,6 +11,7 @@ import { UserDetails, userDetailsLoader } from './pages/UserDetails';
 // layouts
 import { MainLayout } from "./layouts/MainLayout";
 import { HelpLayout } from "./layouts/HelpLayout";
+import { UsersLayout } from "./layouts/UsersLayout";
 
 const router  = createBrowserRouter([
   {
@@ -28,8 +29,14 @@ const router  = createBrowserRouter([
           { path: 'faq', element: <Faq/>}
         ]
       },
-      {  path: 'users', element: <Users/>, loader: usersLoader },
-      {  path: 'users/:userid', element: <UserDetails />, loader: userDetailsLoader }
+      {
+        path: 'users',
+        element: <UsersLayout />,
+        children: [
+          {  index: true, element: <Users/>, loader: usersLoader },
+          {  path: ':userid', element: <UserDetails />, loader: userDetailsLoader }
+        ]
+      }
     ]
   }  
 ]);
