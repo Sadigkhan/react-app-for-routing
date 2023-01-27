@@ -5,6 +5,7 @@ import { Home }  from './pages/Home';
 import { About } from './pages/About';
 import { Faq } from './pages/help/Faq';
 import { Contact } from './pages/help/Contact';
+import { Users, usersLoader } from './pages/Users';
 
 // layouts
 import { MainLayout } from "./layouts/MainLayout";
@@ -25,7 +26,8 @@ const router  = createBrowserRouter([
           { path: 'contact', element: <Contact/>},
           { path: 'faq', element: <Faq/>}
         ]
-      }
+      },
+      {  path: 'users', element: <Users/>, loader: usersLoader }
     ]
   }  
 ]);

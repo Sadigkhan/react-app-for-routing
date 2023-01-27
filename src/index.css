@@ -10,13 +10,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #fff;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
     padding: 20px;
     background: var(--secondary);
+    color: #fff;
+}
+
+a {
+    color: #fff;
 }
 
 header {
@@ -105,4 +109,19 @@ form button {
     color: #fff;
     background: var(--primary);
     cursor: pointer;
+}
+
+/* users */
+.users .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    background-color: var(--secondary);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.users .card a {
+    font-size: 30px;
 }
