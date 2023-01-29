@@ -4,9 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home }  from './pages/Home';
 import { About } from './pages/About';
 import { Faq } from './pages/help/Faq';
+import { NotFound } from './pages/NotFound';
 import { Contact, contactAction } from './pages/help/Contact';
-import { Users, usersLoader } from './pages/Users';
-import { UserDetails, userDetailsLoader } from './pages/UserDetails';
+import { Users, usersLoader } from './pages/users/Users';
+import { UserDetails, userDetailsLoader } from './pages/users/UserDetails';
 
 // layouts
 import { MainLayout } from "./layouts/MainLayout";
@@ -36,9 +37,10 @@ const router  = createBrowserRouter([
           {  index: true, element: <Users/>, loader: usersLoader },
           {  path: ':userid', element: <UserDetails />, loader: userDetailsLoader }
         ]
-      }
+      },
+      { path: "*", element: <NotFound/> }
     ]
-  }  
+  }    
 ]);
 
 function App() {
