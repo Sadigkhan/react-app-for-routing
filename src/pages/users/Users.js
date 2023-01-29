@@ -23,5 +23,8 @@ export const Users = () => {
 
 export const usersLoader = async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    if(res.status === 404) {
+        throw new Response("Kaynak bulunamadı", { status: 404 });
+    }
     return res.json();
 }

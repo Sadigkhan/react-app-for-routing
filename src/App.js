@@ -13,6 +13,7 @@ import { UserDetails, userDetailsLoader } from './pages/users/UserDetails';
 import { MainLayout } from "./layouts/MainLayout";
 import { HelpLayout } from "./layouts/HelpLayout";
 import { UsersLayout } from "./layouts/UsersLayout";
+import UsersError from "./pages/users/UsersError";
 
 const router  = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router  = createBrowserRouter([
       {
         path: 'users',
         element: <UsersLayout />,
+        errorElement: <UsersError/>,
         children: [
           {  index: true, element: <Users/>, loader: usersLoader },
           {  path: ':userid', element: <UserDetails />, loader: userDetailsLoader }
