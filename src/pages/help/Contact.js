@@ -4,7 +4,7 @@ export const Contact = () => {
     const errors = useActionData();
     return (
         <div className="contact">
-            <h3>İletişim</h3>
+            <h3>Contact</h3>
             <Form method="post" action="/help/contact">
                 <div>
                     <label htmlFor="email">Email: </label>
@@ -31,11 +31,11 @@ export const contactAction = async ({ request }) => {
     const errors = {};
 
     if (typeof email !== "string" || !email.includes("@")) {
-        errors.email = "email girmelisiniz";
+        errors.email = "Please enter valid email adress";
     }
 
     if (typeof message!== "string" || message.length < 10) {
-        errors.message = "mesaj için en az 10 karakter girmelisiniz";
+        errors.message = "You must use at least 10 symbols ";
     }
 
     if(Object.keys(errors).length) {
